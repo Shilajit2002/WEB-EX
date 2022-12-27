@@ -1,0 +1,53 @@
+<div class="bootstrap-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12" *ngIf="cat">
+        <h1>Subject</h1>
+        <mat-card>
+          <mat-card-header>
+            <!-- Logo -->
+            <div mat-card-avatar class="example-header-image"></div>
+            <!-- Title -->
+            <mat-card-title>
+              {{ cat.title }}
+            </mat-card-title>
+            <!-- SubTitle -->
+            <mat-card-subtitle>
+              {{ cat.description }}
+            </mat-card-subtitle>
+          </mat-card-header>
+        </mat-card>
+      </div>
+      <div class="col-md-12" *ngIf="quizzes.length != 0">
+        <h1>List of Papers</h1>
+        <mat-card>
+          <mat-list>
+            <!-- Loop for displaying the quizzes -->
+            <mat-list-item *ngFor="let q of quizzes">
+              <!-- Category Icon -->
+              <mat-icon mat-list-icon>category</mat-icon>
+              <!-- Quiz Title -->
+              <div mat-line>{{ q.title }}</div>
+
+              <!-- View Button -->
+              <button
+                mat-flat-button
+                color="accent"
+                [routerLink]="'/user-dashboard/instructions/' + q.qId"
+              >
+                View <mat-icon>view_list</mat-icon>
+              </button>
+              <mat-divider></mat-divider>
+            </mat-list-item>
+          </mat-list>
+        </mat-card>
+      </div>
+      <!-- If there is no paper in this subject -->
+      <div class="col-md-12" *ngIf="quizzes.length == 0">
+        <mat-card>
+          <mat-card-subtitle> No Paper Available in This Subject </mat-card-subtitle>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

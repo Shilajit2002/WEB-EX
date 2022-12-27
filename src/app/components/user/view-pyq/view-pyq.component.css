@@ -1,0 +1,18 @@
+.example-header-image {
+    background-image: url('../../../../assets/exam_paper_logo.png');
+    background-size: cover;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+mat-list-item a{
+    margin: 5px;
+}
+
+.card{
+    margin: 10px;
+}

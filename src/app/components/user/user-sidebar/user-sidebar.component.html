@@ -1,0 +1,40 @@
+<mat-card>
+  <mat-action-list>
+    <!-- Home Button -->
+    <button
+      routerLink="/user-dashboard"
+      mat-list-item
+      (click)="changeHomeButton()"
+      [style.background]="home"
+      [style.color]="homecolor"
+      class="home"
+    >
+      <!-- Home Icon -->
+      <mat-icon mat-list-icon> home </mat-icon>Home
+    </button>
+
+    <!-- View Subject Button -->
+    <button
+      routerLink="/user-dashboard/view-subject"
+      mat-list-item
+      (click)="changeSubjectButton()"
+      [style.background]="subject"
+      [style.color]="subjectcolor"
+    >
+      <!-- Subject Icon -->
+      <mat-icon mat-list-icon> subject </mat-icon>View Subjects
+    </button>
+
+    <!-- View PYQ Button -->
+    <button
+      routerLink="/user-dashboard/view-pyq"
+      mat-list-item
+      (click)="changePYQButton()"
+      [style.background]="PYQ"
+      [style.color]="PYQcolor"
+    >
+      <!-- Quiz Icon -->
+      <mat-icon mat-list-icon> quiz </mat-icon>View PYQ
+    </button>
+  </mat-action-list>
+</mat-card>

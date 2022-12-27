@@ -1,0 +1,13 @@
+button{
+    margin: 5px;
+  }
+
+  .container{
+    margin-top: 30px;
+  }
+
+  .container mat-icon{
+    position: absolute;
+    transform: scale(2.3);
+    cursor: pointer;
+  }

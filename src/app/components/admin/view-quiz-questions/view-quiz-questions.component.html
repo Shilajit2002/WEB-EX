@@ -1,0 +1,88 @@
+<h1>Questions of {{ qTitle }}</h1>
+
+<div class="bootstrap-wrapper">
+  <div class="row">
+    <div class="col-md-12">
+      <!-- Loop for displaying the Questions -->
+      <mat-card *ngFor="let q of questions; let i = index">
+        <!-- For Index 0 Delete All the Questions Button Show-->
+        <mat-card-header *ngIf="i == 0">
+          <button mat-raised-button color="warn" (click)="deleteAllQuestion()">
+            Delete All
+            <!-- Delete Forever Icon -->
+            <mat-icon> delete_forever</mat-icon>
+          </button>
+        </mat-card-header>
+        <mat-card-content>
+          <!-- Questions Showing -->
+          <div
+            [innerHTML]="q.htmlStr"
+            style="overflow: auto"
+            class="demo"
+          ></div>
+
+          <div class="container-fluid">
+            <div class="row">
+              <!-- Option 1 -->
+              <div class="col-md-6">
+                <p>i) {{ q.option1 }}</p>
+              </div>
+              <!-- Option 2 -->
+              <div class="col-md-6">
+                <p>ii) {{ q.option2 }}</p>
+              </div>
+            </div>
+            <div class="row">
+              <!-- Option 3 -->
+              <div class="col-md-6">
+                <p>iii) {{ q.option3 }}</p>
+              </div>
+              <!-- Option 4 -->
+              <div class="col-md-6">
+                <p>iv) {{ q.option4 }}</p>
+              </div>
+            </div>
+
+            <!-- Divider between Answer and Question -->
+            <mat-divider> </mat-divider>
+
+            <!-- Answer -->
+            <p><b>Correct Answer :</b> {{ q.answer }}</p>
+          </div>
+        </mat-card-content>
+
+        <mat-card-actions>
+          <!-- Update Button -->
+          <button
+            mat-raised-button
+            color="primary"
+            [routerLink]="
+              '/admin/update-question/' + qId + '/' + qTitle + '/' + q.quesId
+            "
+          >
+            Edit <mat-icon>edit</mat-icon>
+          </button>
+          <!-- Delete Button -->
+          <button
+            mat-raised-button
+            color="accent"
+            (click)="deleteQuestion(q.quesId)"
+          >
+            Delete <mat-icon>delete</mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+
+      <!-- Add Question Button -->
+      <div class="container text-align">
+        <button
+          mat-raised-button
+          color="warn"
+          [routerLink]="'/admin/add-question/' + qId + '/' + qTitle"
+        >
+          Add Question <mat-icon>add_circle</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

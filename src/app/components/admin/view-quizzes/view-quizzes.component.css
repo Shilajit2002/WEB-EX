@@ -1,0 +1,22 @@
+.example-header-image {
+    background-image: url('../../../../assets/exam_paper_logo.png');
+    background-size: cover;
+  }
+
+  .mat-card{
+    margin-bottom: 10px;
+  }
+
+  button{
+    margin: 5px;
+  }
+
+  .container{
+    margin-top: 30px;
+  }
+
+  .container mat-icon{
+    position: absolute;
+    transform: scale(2.3);
+    cursor: pointer;
+  }

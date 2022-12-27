@@ -1,0 +1,85 @@
+<mat-card *ngIf="user">
+  <!-- {{ user | json }} -->
+  <mat-card-content>
+    <div class="bootstrap-wrapper" *ngIf="user">
+      <div class="container-fluid">
+        <div class="left text-align">
+          <!-- Image Div -->
+          <div id="inDiv">
+            <!-- Profile Image -->
+            <img [src]="url" *ngIf="url" />
+            <p>
+              <input type="file" id="file" (change)="selectFile($event)" />
+              <label for="file"
+                ><mat-icon id="picicon">add_a_photo</mat-icon></label
+              >
+            </p>
+          </div>
+
+          <!-- Name of the Admin/User -->
+          <h3>Hello,</h3>
+          <h2>
+            {{ login.getUser().firstName }} {{ login.getUser().lastName }}
+          </h2>
+
+          <!-- Profile Image Change Save Button -->
+          <button class="save">Save</button>
+        </div>
+        <div class="right">
+          <!-- Profile Status Div -->
+          <div class="prof">
+            <h3>Profile Status</h3>
+            <!-- User active or Inactive  -->
+            <h4 class="{{ login.getUser().enabled ? 'Active' : 'Inactive' }}">
+              {{ login.getUser().enabled ? "Active" : "Inactive"
+              }}<button></button>
+            </h4>
+          </div>
+          <!-- Up table -->
+          <div class="up">
+            <h2>Profile Details</h2>
+            <table>
+              <!-- Table Body -->
+              <tbody>
+                <!-- User Id -->
+                <tr>
+                  <td>User Id</td>
+                  <td class="Second">
+                    {{ login.getUser().firstName }}{{ login.getUser().id }}
+                  </td>
+                </tr>
+                <!-- Username -->
+                <tr class="mid">
+                  <td>Username</td>
+                  <td class="Second">{{ login.getUser().username }}</td>
+                </tr>
+                <!-- Email Id -->
+                <tr>
+                  <td>Email Id</td>
+                  <td class="Second">{{ login.getUser().email }}</td>
+                </tr>
+                <!-- Phone -->
+                <tr class="mid">
+                  <td>Phone No.</td>
+                  <td class="Second">+ {{ login.getUser().phone }}</td>
+                </tr>
+                <!-- Role -->
+                <tr>
+                  <td class="a">Role</td>
+                  <td class="Second b">
+                    <!-- If Normal User then it is Student Otherwise Admin -->
+                    {{
+                      login.getUserRole() == "NORMAL"
+                        ? "STUDENT"
+                        : login.getUserRole()
+                    }}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

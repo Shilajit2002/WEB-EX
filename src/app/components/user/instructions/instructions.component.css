@@ -1,0 +1,48 @@
+.pic{
+    width: 150px;
+    height: 160px;
+    border-radius: 50%;
+}
+
+.row{
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+.row h1{
+    background-color: black;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 10px;
+}
+
+mat-card-title{
+    margin-bottom: 20px;
+}
+
+.col-md-12 h1{
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 15px;
+}
+
+.col-md-6 mat-card{
+    height: 60px;
+    margin: 5px;
+    background-color: lavender;
+    color: black;
+    font-weight: 400;
+}
+
+.start{
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
