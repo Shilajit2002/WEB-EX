@@ -1,0 +1,64 @@
+<mat-card>
+  <mat-action-list>
+    <!-- Home Button -->
+    <button
+      routerLink="/admin"
+      mat-list-item
+      (click)="changeHomeButton()"
+      [style.background]="home"
+      [style.color]="homecolor"
+      class="home"
+    >
+      <!-- Home Icon -->
+      <mat-icon mat-list-icon> home </mat-icon>Home
+    </button>
+
+    <!-- Subject Button -->
+    <button
+      routerLink="/admin/categories"
+      mat-list-item
+      (click)="changeSubjectButton()"
+      [style.background]="subject"
+      [style.color]="subjectcolor"
+    >
+      <!-- Subject Icon -->
+      <mat-icon mat-list-icon> subject </mat-icon>View Subjects
+    </button>
+
+    <!-- Add Subject Button -->
+    <button
+      routerLink="/admin/add-category"
+      mat-list-item
+      (click)="changeaddSubButton()"
+      [style.background]="addSubject"
+      [style.color]="addSubjectcolor"
+    >
+      <!-- Add Icon -->
+      <mat-icon mat-list-icon> add_box </mat-icon>Add Subject
+    </button>
+
+    <!-- Paper Button -->
+    <button
+      routerLink="/admin/quizzes"
+      mat-list-item
+      (click)="changePaperButton()"
+      [style.background]="paper"
+      [style.color]="papercolor"
+    >
+      <!-- Article Icon -->
+      <mat-icon mat-list-icon> article </mat-icon>View Papers
+    </button>
+
+    <!-- Add Paper Button -->
+    <button
+      routerLink="/admin/add-quiz"
+      mat-list-item
+      (click)="changeaddPaperButton()"
+      [style.background]="addPaper"
+      [style.color]="addPapercolor"
+    >
+      <!-- Add Icon -->
+      <mat-icon mat-list-icon> add_box </mat-icon>Add Paper
+    </button>
+  </mat-action-list>
+</mat-card>

@@ -1,0 +1,244 @@
+<div class="bootstrap-wrapper" *ngIf="!isSubmit">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2 left">
+        <mat-card>
+          <img src="../../../assets/ProfilePicUser.jpg" alt="" />
+          <mat-card-subtitle
+            >{{ login.getUser().firstName }}
+            {{ login.getUser().lastName }}</mat-card-subtitle
+          >
+          <hr />
+          <mat-card-title>
+            {{ quiz.title }}
+          </mat-card-title>
+          <hr />
+          <div class="digital-clock">
+            <mat-card-subtitle>Time</mat-card-subtitle>
+            {{ format(hour) }}:{{ format(minute) }}:{{ format(second) }}
+          </div>
+        </mat-card>
+      </div>
+      <div class="col-md-8 middle">
+        <ng-container *ngIf="questions">
+          <mat-card *ngFor="let q of questions; let i = index">
+            <mat-card-title>Question {{ i + 1 }}</mat-card-title>
+            <!-- Questions Showing -->
+            <div [innerHTML]="q.content" style="overflow: auto"></div>
+            <mat-card-subtitle>
+              <span>Ans : </span>
+            </mat-card-subtitle>
+            <div class="row">
+              <div class="col-md-6">
+                <input
+                  type="radio"
+                  [value]="q.option1"
+                  name="{{ i }}"
+                  [(ngModel)]="q.givenAnswer"
+                />
+                {{ q.option1 }}
+              </div>
+              <div class="col-md-6">
+                <input
+                  type="radio"
+                  [value]="q.option2"
+                  name="{{ i }}"
+                  [(ngModel)]="q.givenAnswer"
+                />
+                {{ q.option2 }}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <input
+                  type="radio"
+                  [value]="q.option3"
+                  name="{{ i }}"
+                  [(ngModel)]="q.givenAnswer"
+                />
+                {{ q.option3 }}
+              </div>
+              <div class="col-md-6">
+                <input
+                  type="radio"
+                  [value]="q.option4"
+                  name="{{ i }}"
+                  [(ngModel)]="q.givenAnswer"
+                />
+                {{ q.option4 }}
+              </div>
+            </div>
+            <div class="col-md-12">
+              <mat-checkbox class="button bg-danger" type="button"
+              mat-flat-button
+              color="dark">Marked For Review</mat-checkbox>
+            </div>
+          </mat-card>
+        </ng-container>
+
+        <div class="text-center m-2">
+          <button type="button" class="btn btn-success" (click)="submitPaper()">
+            End & Finish Exam
+          </button>
+        </div>
+      </div>
+      <div class="col-md-2 right">
+        <mat-card>
+          <webcam [height]="160" [width]="160" [imageQuality]="1"></webcam>
+
+          <mat-card-content>
+            <p>{{ getFormattedTime() }} Left</p>
+
+            <mat-card-subtitle>
+              Timer
+            </mat-card-subtitle>
+            <mat-spinner
+              color="accent"
+              mode="determinate"
+              [value]="(timer / (quiz.numberOfQuestions * 2 * 60)) * 100"
+            ></mat-spinner>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Show the Result -->
+<div class="bootstrap-wrapper" *ngIf="isSubmit">
+  <div class="container-fluid">
+    <div
+      class="row result"
+      style="
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+      "
+    >
+      <div class="col-md-8" id="sectionToPrint">
+        <mat-card>
+          <div
+            class="up"
+            style="
+              display: flex;
+              align-items: center;
+              width: 70%;
+              justify-content: space-around;
+              margin-top: 10px;
+              margin-bottom: 40px;
+              background-color: rgb(0, 183, 255);
+              border-radius: 2px;
+            "
+          >
+            <img src="../../../../assets/ResultLogo.jpg" alt="" />
+
+            <mat-card-title
+              style="
+                font-size: 2rem;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                font-weight: 600;
+              "
+            >
+              Result
+            </mat-card-title>
+          </div>
+
+          <mat-card-content
+            style="
+              display: flex;
+              justify-content: center;
+              flex-direction: column;
+            "
+          >
+            <div
+              class="details"
+              style="display: flex; justify-content: start; align-items: center"
+            >
+              <p>Student Name</p>
+              <p class="inner">
+                : {{ login.getUser().firstName }}
+                {{ login.getUser().lastName }}
+              </p>
+            </div>
+            <div
+              class="details"
+              style="display: flex; justify-content: start; align-items: center"
+            >
+              <p>Email Id</p>
+              <p class="inner1">: {{ login.getUser().email }}</p>
+            </div>
+            <div
+              class="details"
+              style="display: flex; justify-content: start; align-items: center"
+            >
+              <p>Username</p>
+              <p class="inner2">: {{ login.getUser().username }}</p>
+            </div>
+
+            <table class="table table-hover table-striped">
+              <tbody>
+                <tr>
+                  <td class="bg-dark text-light">Subject</td>
+                  <td class="bg-info text-dark">{{ quiz.category.title }}</td>
+                </tr>
+                <tr>
+                  <td class="bg-dark text-light">Paper</td>
+                  <td class="bg-info text-dark">{{ quiz.title }}</td>
+                </tr>
+                <tr>
+                  <td class="bg-dark text-light">Total Questions</td>
+                  <td class="bg-info text-dark">
+                    {{ quiz.numberOfQuestions }}
+                  </td>
+                </tr>
+                <tr>
+                  <td class="bg-dark text-light">Total Marks</td>
+                  <td class="bg-info text-dark">{{ quiz.maxMarks }}</td>
+                </tr>
+                <tr>
+                  <td class="bg-dark text-light">Attempted</td>
+                  <td class="bg-info text-dark">{{ attempted }}</td>
+                </tr>
+                <tr>
+                  <td class="bg-dark text-light">Correct Answer</td>
+                  <td class="bg-info text-dark">{{ correctAnswer }}</td>
+                </tr>
+                <tr>
+                  <td class="bg-dark text-light">Marks Obtained</td>
+                  <td class="bg-info text-dark">{{ marksGot }}</td>
+                </tr>
+                <tr>
+                  <td class="bg-dark text-light">Status</td>
+                  <td class="bg-info text-dark">{{ status }}</td>
+                </tr>
+                <tr>
+                  <td class="bg-dark text-light">Grade</td>
+                  <td class="bg-info text-dark">{{ grade }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </mat-card-content>
+          <footer>
+            Grading Scale :
+            <li>O = 100 to 90</li>
+            <li>E = 89 to 80</li>
+            <li>A = 79 to 70</li>
+            <li>B = 69 to 60</li>
+            <li>C = 59 to 50</li>
+            <li>D = 49 to 40</li>
+            <li>F = Below 40</li>
+          </footer>
+        </mat-card>
+      </div>
+      <button
+        (click)="printPage('sectionToPrint')"
+        mat-raised-button
+        color="accent"
+      >
+        Print
+      </button>
+    </div>
+  </div>
+</div>

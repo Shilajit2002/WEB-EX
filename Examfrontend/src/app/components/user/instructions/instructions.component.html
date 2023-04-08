@@ -1,0 +1,80 @@
+<div class="bootstrap-wrapper">
+  <div class="container-fluid">
+    <div class="row" *ngIf="quiz">
+      <h1>Exam</h1>
+      <div class="col-md-9">
+        <mat-card-title> Exam Instruction </mat-card-title>
+        <mat-card-subtitle>
+          This is a remote invigilated proctored exam of
+          <b>{{ quiz.numberOfQuestions }} questions</b> of
+          <b>{{ quiz.maxMarks / quiz.numberOfQuestions }} mark</b> each.Total
+          time given will be <b>{{ quiz.numberOfQuestions * 2 }} minutes</b>.You
+          need to take this exam using a
+          <b>Chrome Browser on Windows Laptop/Desktop with a Webcam.</b> You
+          will be monitoring using the same.Any presence of another person or
+          movement away from the browser tab is not allowed doing the duration
+          of the exam.<b
+            >If any such malpractice is noted during , after the exam based on
+            the recorded evidence then the candidates exam maybe cancelled.</b
+          >
+        </mat-card-subtitle>
+      </div>
+      <div class="col-md-3">
+        <img src="../../../assets/ProfilePicUser.jpg" alt="" class="pic" />
+      </div>
+
+      <div class="col-md-12">
+        <h1>Exam Information</h1>
+      </div>
+      <div class="col-md-6">
+        <mat-card>
+          <mat-card-subtitle>
+            Title : {{ quiz.title }}
+          </mat-card-subtitle></mat-card
+        >
+      </div>
+      <div class="col-md-6">
+        <mat-card
+          ><mat-card-subtitle>
+            Description : {{ quiz.description }}</mat-card-subtitle
+          ></mat-card
+        >
+      </div>
+      <div class="col-md-6">
+        <mat-card
+          ><mat-card-subtitle>
+            Total Marks : {{ quiz.maxMarks }}
+          </mat-card-subtitle></mat-card
+        >
+      </div>
+      <div class="col-md-6">
+        <mat-card
+          ><mat-card-subtitle>
+            Total Questions : {{ quiz.numberOfQuestions }}
+          </mat-card-subtitle></mat-card
+        >
+      </div>
+      <div class="col-md-6">
+        <mat-card
+          ><mat-card-subtitle>
+            Current User : {{ login.getUser().firstName }}
+            {{ login.getUser().lastName }}</mat-card-subtitle
+          ></mat-card
+        >
+      </div>
+      <div class="col-md-6">
+        <mat-card
+          ><mat-card-subtitle>
+            Total Duration :
+            {{ quiz.numberOfQuestions * 2 }} Minutes
+          </mat-card-subtitle></mat-card
+        >
+      </div>
+      <div class="col-md-12 start">
+        <button mat-flat-button color="accent" (click)="startQuiz()">
+          <mat-icon> start </mat-icon>Start Exam
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

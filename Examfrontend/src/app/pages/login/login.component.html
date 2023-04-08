@@ -1,0 +1,60 @@
+<div class="bootstrap-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="text-align">Hello !</h1>
+        <p class="text-align">Sign In to your account</p>
+
+        <!-- {{ loginData | json }} For check data pls uncomment -->
+        <form (ngSubmit)="formSubmit()">
+          <!-- User Name Field -->
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Username</mat-label>
+            <input
+              [(ngModel)]="loginData.username"
+              required
+              name="username"
+              matInput
+              placeholder="Enter Username"
+            />
+            <mat-icon matSuffix>person</mat-icon>
+            <mat-error>Enter Valid Username</mat-error>
+          </mat-form-field>
+
+          <!-- Password Field -->
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Password</mat-label>
+            <input
+              [(ngModel)]="loginData.password"
+              required
+              name="password"
+              [type]="hide ? 'text' : 'password'"
+              matInput
+              placeholder="Enter Password"
+            />
+            <button
+              type="button"
+              mat-icon-button
+              matSuffix
+              (click)="hide = !hide"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide"
+            >
+              <mat-icon>{{ hide ? "visibility" : "visibility_off" }}</mat-icon>
+            </button>
+            <mat-error id="hello">Enter correct password</mat-error>
+          </mat-form-field>
+
+          <div class="container text-align flex">
+            <!-- Login Button -->
+            <button type="submit" class="login">Sign In</button>
+            <!-- Clear Button -->
+            <button type="reset" class="clear">Reset</button>
+          </div>
+
+          <p>Don't have an account ? <a href="/signup">Create</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

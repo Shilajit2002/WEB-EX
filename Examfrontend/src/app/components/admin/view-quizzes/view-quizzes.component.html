@@ -1,0 +1,48 @@
+<!-- Loop for displaying the Quizzes -->
+<mat-card *ngFor="let q of quizzes">
+  <mat-card-header>
+    <!-- Logo -->
+    <div mat-card-avatar class="example-header-image"></div>
+    <!-- Title of the Paper -->
+    <mat-card-title>{{ q.title }}</mat-card-title>
+    <!-- Category of the Paper -->
+    <mat-card-subtitle>
+      {{ q.category.title }}
+    </mat-card-subtitle>
+  </mat-card-header>
+  <!-- Paper Description -->
+  <mat-card-content>
+    <p>{{ q.description }}</p>
+  </mat-card-content>
+  <!-- Questions Button -->
+  <button
+    mat-flat-button
+    color="warn"
+    [routerLink]="'/admin/view-questions/' + q.qId + '/' + q.title"
+  >
+    Questions
+  </button>
+  <!-- Max Marks Button -->
+  <button mat-stroked-button color="primary">
+    Max Marks : {{ q.maxMarks }}
+  </button>
+  <!-- Button of Number of Questions -->
+  <button mat-stroked-button color="accent">
+    Questions :{{ q.numberOfQuestions }}
+  </button>
+  <!-- Total Attempts Button -->
+  <button mat-flat-button color="primary">Total Attempts</button>
+  <!-- Update Button -->
+  <button mat-flat-button color="accent" [routerLink]="'/admin/quiz/' + q.qId">
+    Edit <mat-icon>edit</mat-icon>
+  </button>
+  <!-- Delete Button -->
+  <button mat-flat-button color="primary" (click)="deletePaper(q.qId)">
+    Delete <mat-icon>delete</mat-icon>
+  </button>
+</mat-card>
+
+<div class="container text-align">
+  <!-- Add Paper Button -->
+  <mat-icon routerLink="/admin/add-quiz" color="accent">add_circle</mat-icon>
+</div>

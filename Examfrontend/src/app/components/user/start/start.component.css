@@ -1,0 +1,203 @@
+.bootstrap-wrapper {
+    padding-top: 80px;
+}
+
+.bg-success {
+    text-align: center;
+    align-self: center;
+}
+
+.middle mat-card {
+    margin-bottom: 10px;
+}
+
+.middle mat-card-title {
+    background-color: rgba(0, 23, 32, 0.808);
+    color: white;
+    padding: 15px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.middle mat-card-subtitle span {
+    background-color: rgb(0, 191, 255);
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+.middle .col-md-6 {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.middle input[type="radio"] {
+    accent-color: rgb(236, 0, 217);
+    cursor: pointer;
+}
+
+.middle .col-md-12 {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+    padding: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: rgb(193, 226, 255);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.middle .col-md-12 .button {
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    font-size: 1rem;
+}
+
+.left mat-card {
+    position: sticky;
+    top: 80px;
+    background-color: rgb(0, 183, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.left mat-card img {
+    width: 150px;
+    height: 160px;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+
+.left mat-card mat-card-subtitle {
+    padding: 10px;
+    font-size: 1.1rem;
+    color: white;
+    font-weight: 400;
+}
+
+.left hr {
+    border: 2px solid white;
+    width: 100%;
+}
+
+.left mat-card-title {
+    padding: 10px;
+    font-size: 1.2rem;
+    color: white;
+    font-weight: 400;
+    text-align: center;
+}
+
+.left .digital-clock {
+    font-size: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+}
+
+.right mat-card {
+    position: sticky;
+    top: 80px;
+    background-color: honeydew;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.right mat-card-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.right mat-card-content p {
+    background-color: rgb(0, 29, 46);
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    font-size: 1rem;
+}
+
+.right mat-card-subtitle {
+    color: black;
+    font-size: 1rem;
+
+}
+
+.result .up mat-card-title {
+    font-size: 2rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.result mat-card-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.result mat-card-content .details {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.details p {
+    font-size: 1.2rem;
+    color: rgb(0, 51, 71);
+    font-weight: 500;
+}
+
+.details .inner {
+    font-size: 1rem;
+    color: rgb(0, 0, 0);
+    font-weight: 400;
+    margin-left: 10px;
+}
+
+.details .inner1 {
+    font-size: 1rem;
+    color: rgb(0, 0, 0);
+    font-weight: 400;
+    margin-left: 63px;
+}
+
+.details .inner2 {
+    font-size: 1rem;
+    color: rgb(0, 0, 0);
+    font-weight: 400;
+    margin-left: 44px;
+}
+
+table {
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(218, 255, 246);
+    padding: 28px;
+    border-radius: 2px;
+    font-size: 1rem;
+    list-style: square;
+}
+
+.result button {
+    width: fit-content;
+    margin: 10px;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    border-radius: 10px;
+}

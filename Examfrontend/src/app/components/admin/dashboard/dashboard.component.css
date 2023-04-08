@@ -1,0 +1,7 @@
+.bootstrap-wrapper{
+    padding-top: 80px;
+    /* background-image: url('../../../../assets/Dashboard_background.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100vh; */
+    height: 100vh;
+}

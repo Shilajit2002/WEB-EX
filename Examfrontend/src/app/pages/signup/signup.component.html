@@ -1,0 +1,133 @@
+<div class="bootstrap-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="../../../assets/SignUp.avif" alt="" />
+      </div>
+      <div class="col-md-6 right">
+        <h1 class="text-align">Welcome, User !</h1>
+
+        <!-- {{ user | json }} For check data pls uncomment -->
+
+        <form action="" (ngSubmit)="formSubmit()">
+          <!-- User Name Field -->
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Username</mat-label>
+            <input
+              required
+              [(ngModel)]="user.username"
+              name="username"
+              matInput
+              placeholder="Enter Username (Should be Unique)"
+            />
+            <mat-icon matSuffix>person</mat-icon>
+            <mat-error>Contains a-z,0-9,at least 5 characters</mat-error>
+          </mat-form-field>
+
+          <!-- Password Field -->
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Password</mat-label>
+            <input
+              required
+              [(ngModel)]="user.password"
+              name="password"
+              [type]="hide ? 'text' : 'password'"
+              matInput
+              placeholder="Enter Password"
+            />
+            <button
+              type="button"
+              mat-icon-button
+              matSuffix
+              (click)="hide = !hide"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide"
+            >
+              <mat-icon>{{ hide ? "visibility" : "visibility_off" }}</mat-icon>
+            </button>
+            <mat-error id="hello"
+              >Contains A-Z,a-z,0-9,special characters,at least 5
+              characters</mat-error
+            >
+          </mat-form-field>
+
+          <!-- First Name Field -->
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>First Name</mat-label>
+            <input
+              required
+              [(ngModel)]="user.firstName"
+              name="firstName"
+              type="text"
+              [textContent]="true"
+              matInput
+              placeholder="Enter Firstname"
+            />
+            <mat-icon matSuffix>edit</mat-icon>
+            <mat-error>First Letter sould be capital</mat-error>
+          </mat-form-field>
+
+          <!-- Last Name Field -->
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Last Name</mat-label>
+            <input
+              required
+              [(ngModel)]="user.lastName"
+              name="lastName"
+              type="text"
+              [textContent]="true"
+              matInput
+              placeholder="Enter Lastname"
+            />
+            <mat-icon matSuffix>edit</mat-icon>
+            <mat-error>First Letter sould be capital</mat-error>
+          </mat-form-field>
+
+          <!-- Email Field -->
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>E-mail</mat-label>
+            <input
+              required
+              [(ngModel)]="user.email"
+              name="email"
+              type="email"
+              email="true"
+              matInput
+              placeholder="Enter Email Id"
+            />
+            <mat-icon matSuffix>email</mat-icon>
+            <mat-error>Eg : Hello12@gmail.com</mat-error>
+          </mat-form-field>
+
+          <!-- Phone Field -->
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Phone</mat-label>
+            <input
+              required
+              [(ngModel)]="user.phone"
+              name="phone"
+              type="tel"
+              tel="true"
+              ng2TelInput
+              matInput
+              placeholder="(+XX) XXX-XXX-XXXX || Include Country Code"
+              mask="(+00) 000-000-0000"
+            />
+            <mat-icon matSuffix>phone</mat-icon>
+            <mat-error>Enter Phone no.</mat-error>
+          </mat-form-field>
+
+          <div class="container text-align flex">
+            <!-- Sign Up Button -->
+            <button type="submit" class="signup">Create Account</button>
+            <!-- Clear Button -->
+            <button type="reset" class="clear">Reset</button>
+          </div>
+          <p>
+            Already have an account ? <a href="/login">Sign In</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

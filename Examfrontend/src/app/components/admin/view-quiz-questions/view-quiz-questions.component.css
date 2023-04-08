@@ -1,0 +1,18 @@
+button{
+    margin-top: 10px;
+}
+
+mat-card{
+    margin-bottom: 10px;
+}
+
+mat-card-header{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.demo img{
+    width: 100px;
+    margin: 0 auto;
+}

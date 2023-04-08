@@ -1,0 +1,33 @@
+<div class="bootstrap-wrapper">
+  <div class="container-fluid">
+    <h1>List of All Subjects</h1>
+    <div class="row" *ngIf="categories">
+      <div class="col-md-6" *ngFor="let c of categories">
+        <mat-card>
+          <mat-card-header>
+            <!-- Logo -->
+            <div mat-card-avatar class="example-header-image"></div>
+            <!-- Title -->
+            <mat-card-title>
+              {{ c.title }}
+            </mat-card-title>
+            <!-- SubTitle -->
+            <mat-card-subtitle>
+              {{ c.description }}
+            </mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <!-- Button -->
+            <button
+              mat-raised-button
+              color="warn"
+              [routerLink]="'/user-dashboard/view-paper/' + c.cid"
+            >
+              View
+            </button>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

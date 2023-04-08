@@ -1,0 +1,169 @@
+/* Bootstrap Wrapper Main Content */
+.bootstrap-wrapper {
+    padding-top: 140px;
+    background: url('../../../assets/LoginBack.jpg') no-repeat;
+    background-size: 100% 100vh;
+    height: 100vh;
+}
+
+/* Row */
+.row {
+    width: 50%;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.582);
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    box-shadow: rgba(174, 0, 255, 0.295) 0px 5px 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Heading */
+h1 {
+    text-transform: capitalize;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    padding-top: 10px;
+    color: white;
+}
+
+/* P Tag*/
+p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    padding-top: 10px;
+    color: rgb(180, 178, 178);
+}
+
+/* Form */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Form Width */
+form .full-width {
+    width: 80%;
+    margin-bottom: 10px;
+}
+
+/* Mat Form Field */
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    background-color: white;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+    box-shadow: rgba(0, 217, 255, 0.486) 0px 5px 15px;
+}
+
+/* Set top-lef and bottom-left corner radius */
+:host ::ng-deep .mat-form-field-outline-start {
+    border-radius: 0px 0 0 0px !important;
+    min-width: 8px !important;
+}
+
+/* Set top-right and bottom-right corner radius */
+:host ::ng-deep .mat-form-field-outline-end {
+    border-radius: 0 30px 30px 0 !important;
+}
+
+/* To change mat form field border color */
+:host ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: transparent !important;
+}
+
+/* To change mat form field border color on focus */
+:host ::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-start,
+:host ::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-end,
+:host ::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline {
+    color: purple !important;
+}
+
+/* Mat-Icon */
+mat-icon {
+    color: rgb(9, 61, 175);
+    transform: scale(1.2);
+    text-align: center;
+}
+
+/* Mat-Error */
+mat-error {
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+}
+
+/* Mat-Label */
+mat-label {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(117, 112, 112);
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+/* Flex For two Button */
+.flex {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+}
+
+/* Button */
+.flex .login {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 10px 30px;
+    border-radius: 30px;
+    border-style: none;
+    background: linear-gradient(45deg, rgba(128, 0, 128, 0.904), rgba(0, 0, 255, 0.884));
+    color: white;
+}
+
+.flex .login:hover {
+    box-shadow: rgba(121, 167, 187, 0.322) 0px 2px 4px 0px, rgba(116, 140, 150, 0.32) 0px 2px 16px 0px;
+}
+
+.flex .clear {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 10px 12px;
+    border-radius: 30px;
+    border-style: none;
+    background: linear-gradient(45deg, rgba(250, 50, 250, 0.904), rgba(2, 132, 172, 0.884));
+    color: black;
+}
+
+.flex .clear:hover {
+    box-shadow: rgba(195, 237, 255, 0.322) 0px 2px 4px 0px, rgba(255, 255, 255, 0.32) 0px 2px 16px 0px;
+}
+
+/* P Tag Form */
+form p {
+    padding: 35px 0px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #e9e8e8;
+    text-align: center;
+}
+
+/* Link Attribute */
+form p a {
+    text-decoration: none;
+    color: rgb(153, 201, 255);
+    font-weight: 600;
+}
+
+/* Link Attribute Hover*/
+form p a:hover {
+    color: rgb(47, 3, 128);
+}

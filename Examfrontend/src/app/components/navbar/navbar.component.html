@@ -1,0 +1,97 @@
+<!-- Navbar -->
+
+<!-- Angular Material Navbar -->
+<mat-toolbar>
+  <!-- Logo -->
+  <a
+    href="/"
+    class="example-icon"
+    aria-label="Example icon-button with menu icon"
+  >
+    <img src="../../../assets/Logo.jpeg" alt="Logo" class="logo" />
+  </a>
+
+  <!-- Space Between Logo and Item -->
+  <span class="example-spacer"></span>
+
+  <div class="box">
+    <!-- Home Button Always Show -->
+    <a
+      href="/"
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button"
+    >
+      Home
+    </a>
+
+    <!-- Sign Up Button When User is Not Signed Up -->
+    <a
+      *ngIf="!isLoggedIn"
+      href="/signup"
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with heart icon"
+    >
+      SignUp
+    </a>
+
+    <!-- Signin Button When User is Not Logged In -->
+    <a
+      *ngIf="!isLoggedIn"
+      href="/login"
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with share icon"
+    >
+      SignIn
+    </a>
+
+    <!-- Dropdown User -->
+
+    <!-- If User is Logged In Show the User First Name -->
+    <div class="sec-center" *ngIf="isLoggedIn && user">
+      <!-- Dropdown Element Checkbox -->
+      <input class="dropdown" type="checkbox" id="dropdown" name="dropdown" />
+
+      <!-- User First Name Show -->
+      <label class="for-dropdown" for="dropdown"
+        >Hey, {{ login.getUser().firstName }}
+        <!-- User Profile Pic -->
+        <img
+          src="../../../assets/profiledefault.jpg"
+          alt="User Profile Pic"
+          class="profile"
+        />
+        <!-- Icon For Dropdown -->
+        <mat-icon class="uil">expand_more</mat-icon></label
+      >
+
+      <!-- Dropdown bar -->
+      <div class="section-dropdown">
+        <!-- Show UserName of the Logged User -->
+        <span class="dropdown-item">Signed In as</span>
+        <span class="dropdown-item">{{ login.getUser().username }}</span>
+
+        <!-- Dropdown Divider -->
+        <hr />
+
+        <!-- Show Profile of the User -->
+        <a (click)="profiledash()"
+          >Profile <mat-icon matSuffix>person</mat-icon></a
+        >
+
+        <!-- Show Dashboard of the User -->
+        <a (click)="dashboard()">Dashboard <mat-icon>dashboard</mat-icon></a>
+
+        <!-- Dropdown Divider -->
+        <hr />
+
+        <!-- Logout When User is Logged In -->
+        <a (click)="logout()" *ngIf="isLoggedIn">
+          SignOut <mat-icon>logout</mat-icon>
+        </a>
+      </div>
+    </div>
+  </div>
+</mat-toolbar>

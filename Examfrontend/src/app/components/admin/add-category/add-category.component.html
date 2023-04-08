@@ -1,0 +1,53 @@
+<mat-card>
+  <h1>Add New Subject</h1>
+
+  <!-- {{ category | json}} -->
+  <mat-card-content>
+    <div class="bootstrap-wrapper">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <!-- AddSubject Function -->
+          <form (ngSubmit)="addSubject()">
+            <!-- Title -->
+            <mat-form-field class="w100" appearance="outline">
+              <mat-label>Title</mat-label>
+              <input
+                required
+                type="text"
+                name="title"
+                matInput
+                id=""
+                placeholder="Enter Here"
+                [(ngModel)]="category.title"
+              />
+            </mat-form-field>
+
+            <!-- Description -->
+            <mat-form-field class="w100" appearance="outline">
+              <mat-label>Description</mat-label>
+              <textarea
+                required
+                type="text"
+                name="text"
+                matInput
+                id=""
+                placeholder="Enter Here"
+                row="20"
+                [(ngModel)]="category.description"
+              ></textarea>
+            </mat-form-field>
+
+            <!-- Buttons -->
+            <div class="container text-align flex">
+              <button mat-raised-button color="accent" type="submit">
+                Add
+              </button>
+              <!-- Alert not Showing after pressing reset button...Some problem Occurred -->
+              <!-- <button mat-raised-button color="warn" type="reset">Reset</button> -->
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,26 @@
+/* Mat-Card */
+mat-card {
+    /* height: 85vh; */
+    position: sticky;
+    top: 80px;
+    background: linear-gradient(to bottom right, rgb(189, 4, 189), rgb(54, 54, 247));
+    border-radius: 10px;
+}
+
+/* Buttons */
+.mat-list-item {
+    margin-bottom: 6%;
+    color: white;
+    font-size: 1.1rem;
+    /* padding: 2%; */
+    width: 10px;
+    border-radius: 50px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    font-weight: 500;
+}
+
+/* Home button for Active */
+.home {
+    background-color: white;
+    color: black;
+}

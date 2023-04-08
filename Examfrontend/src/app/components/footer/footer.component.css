@@ -1,0 +1,42 @@
+/* Footer */
+.footer {
+    width: 100%;
+    background-color: #212529;
+    color: white;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.row h2 {
+    text-transform: capitalize;
+    text-decoration: underline;
+}
+
+mat-card-subtitle {
+    color: aliceblue;
+}
+
+.img {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.img img {
+    width: 30px;
+    cursor: pointer;
+    margin-top: 5px
+}
+
+.row p {
+    padding-top: 20px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(82, 174, 255);
+}

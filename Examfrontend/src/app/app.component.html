@@ -1,0 +1,19 @@
+<!-- Loader -->
+<ngx-ui-loader
+  fgsColor="#800080"
+  text="please wait..."
+  textColor="white"
+  pbColor="blue"
+  [pbThickness]="6"
+></ngx-ui-loader>
+
+<!-- When Loader is Loading Background is Blur -->
+<div ngxUiLoaderBlurred (blur)="(10)">
+  <!-- Navbar Addding -->
+  <!-- Static Content -->
+  <app-navbar></app-navbar>
+
+  <!-- Router Outlet Adding for SignUp,Login,Home -->
+  <!-- Dynamic Content -->
+  <router-outlet></router-outlet>
+</div>
